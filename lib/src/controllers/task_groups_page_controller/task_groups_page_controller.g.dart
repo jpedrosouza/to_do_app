@@ -39,6 +39,37 @@ mixin _$TaskGroupsPageController on _TaskGroupsPageStore, Store {
     });
   }
 
+  final _$formKeyAtom = Atom(name: '_TaskGroupsPageStore.formKey');
+
+  @override
+  GlobalKey<FormState> get formKey {
+    _$formKeyAtom.reportRead();
+    return super.formKey;
+  }
+
+  @override
+  set formKey(GlobalKey<FormState> value) {
+    _$formKeyAtom.reportWrite(value, super.formKey, () {
+      super.formKey = value;
+    });
+  }
+
+  final _$txtTaskGroupNameAtom =
+      Atom(name: '_TaskGroupsPageStore.txtTaskGroupName');
+
+  @override
+  TextEditingController get txtTaskGroupName {
+    _$txtTaskGroupNameAtom.reportRead();
+    return super.txtTaskGroupName;
+  }
+
+  @override
+  set txtTaskGroupName(TextEditingController value) {
+    _$txtTaskGroupNameAtom.reportWrite(value, super.txtTaskGroupName, () {
+      super.txtTaskGroupName = value;
+    });
+  }
+
   final _$getDataAsyncAction = AsyncAction('_TaskGroupsPageStore.getData');
 
   @override
@@ -46,11 +77,36 @@ mixin _$TaskGroupsPageController on _TaskGroupsPageStore, Store {
     return _$getDataAsyncAction.run(() => super.getData());
   }
 
+  final _$validateFormAndCreateTaskGroupAsyncAction =
+      AsyncAction('_TaskGroupsPageStore.validateFormAndCreateTaskGroup');
+
+  @override
+  Future<dynamic> validateFormAndCreateTaskGroup(BuildContext context) {
+    return _$validateFormAndCreateTaskGroupAsyncAction
+        .run(() => super.validateFormAndCreateTaskGroup(context));
+  }
+
+  final _$_TaskGroupsPageStoreActionController =
+      ActionController(name: '_TaskGroupsPageStore');
+
+  @override
+  void createTaskGroup(BuildContext context) {
+    final _$actionInfo = _$_TaskGroupsPageStoreActionController.startAction(
+        name: '_TaskGroupsPageStore.createTaskGroup');
+    try {
+      return super.createTaskGroup(context);
+    } finally {
+      _$_TaskGroupsPageStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
 loading: ${loading},
-taskGroups: ${taskGroups}
+taskGroups: ${taskGroups},
+formKey: ${formKey},
+txtTaskGroupName: ${txtTaskGroupName}
     ''';
   }
 }

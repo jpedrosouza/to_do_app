@@ -68,7 +68,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+
+    # Illustrations folder.
     - assets/illustrations/undraw_To_do_re_jaef.svg
+    - assets/illustrations/undraw_blank_canvas_3rbb.svg
+
+    # Images folder.
     - assets/images/make_code_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
