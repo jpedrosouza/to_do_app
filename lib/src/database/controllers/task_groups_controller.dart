@@ -14,8 +14,8 @@ class TaskGroupsController {
 
     return List.generate(maps.length, (index) {
       return TaskGroup(
-        maps[index]['id'],
-        maps[index]['name'],
+        id: maps[index]['id'],
+        name: maps[index]['name'],
       );
     });
   }
