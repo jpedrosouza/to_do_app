@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:to_do_app/src/pages/task_groups/task_groups.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,7 +37,10 @@ class _HomePageState extends State<HomePage> {
                 height: 150,
               ),
               ElevatedButton(
-                onPressed: () => {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const TaskGroupsPage()),
+                ),
                 child: const Text(
                   'Start Manager My Tasks',
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
