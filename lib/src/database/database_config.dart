@@ -25,6 +25,6 @@ class DatabaseConfig {
         'TEXT NOT NULL, completed INTEGER NOT NULL, group_id INTEGER);');
 
     await db.execute('CREATE TABLE IF NOT EXISTS task_groups ('
-        'id INTEGER PRIMARY KEY, name TEXT NOT NULL');
+        'id INTEGER PRIMARY KEY, name TEXT NOT NULL);');
   }
 }
