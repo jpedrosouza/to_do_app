@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:to_do_app/src/controllers/task_groups_page_controller/task_groups_page_controller.dart';
+import 'package:to_do_app/src/pages/tasks/tasks.dart';
 
 class TaskGroupsPage extends StatefulWidget {
   const TaskGroupsPage({Key? key}) : super(key: key);
@@ -80,7 +81,16 @@ class _TaskGroupsPageState extends State<TaskGroupsPage> {
                       itemCount: taskGroupsPageController.taskGroups.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          onTap: () => {},
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => TasksPage(
+                                    taskGroupsPageController
+                                        .taskGroups[index].id!,
+                                    taskGroupsPageController
+                                        .taskGroups[index].name!,
+                                    () => taskGroupsPageController.getData())),
+                          ),
                           title: Text(
                             taskGroupsPageController.taskGroups[index].name!,
                           ),

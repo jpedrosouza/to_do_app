@@ -14,10 +14,10 @@ class TaskController {
 
     return List.generate(maps.length, (index) {
       return Task(
-        maps[index]['id'],
-        maps[index]['task_name'],
-        maps[index]['completed'] == 0 ? false : true,
-        maps[index]['group_id'],
+        id: maps[index]['id'],
+        taskName: maps[index]['task_name'],
+        completed: false,
+        groupId: maps[index]['group_id'],
       );
     });
   }
@@ -31,10 +31,10 @@ class TaskController {
 
     return List.generate(maps.length, (index) {
       return Task(
-        maps[index]['id'],
-        maps[index]['name'],
-        maps[index]['completed'] == 0 ? false : true,
-        maps[index]['group_id'],
+        id: maps[index]['id'],
+        taskName: maps[index]['task_name'],
+        completed: false,
+        groupId: maps[index]['group_id'],
       );
     });
   }
